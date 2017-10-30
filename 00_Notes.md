@@ -24,6 +24,7 @@ Need to download the base data first and convert it to topojson format.
 * https://www.youtube.com/watch?v=aNbgrqRuoiE
 * http://duspviz.mit.edu/d3-workshop/mapping-data-with-d3/
 * http://alignedleft.com/tutorials/d3
+* http://chimera.labs.oreilly.com/books/1230000000345/ch10.html#_html_div_tooltips
 
 #### Data Problems
 * All regions? Or just latin America?
@@ -35,3 +36,14 @@ Need to download the base data first and convert it to topojson format.
 * Text limit for notes (max. 150 words).
 * Names of the countries, Spanish or English?
 * Manually change Northern Cyprus (CYN), Somalialand (SOL), Gibraltar, Norway (NO)
+
+* Mandar proyecciones a Andres
+* Mandar otra version con paralelos y meridianos
+* 2017 / 2018 / 2019 / 2020
+* How to close the popup
+* Disenar el armazon tambien con titulo / texto / etc.
+* Arriba, boton espano e ingles
+* Colores: amarillo, azul y rojo
+* tipo de letra
+* Titulo
+* Description

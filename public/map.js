@@ -17,7 +17,10 @@
   // Creating the projection
   var projection = d3.geoMollweide()
     .translate([width / 2, height / 2])
-    .scale(250)
+    .scale(225)
+
+  // Creating the graticule
+  var graticule = d3.geoGraticule();
 
   // Create a "line generator" to be able to draw the lines based on the points
   var path = d3.geoPath()
@@ -142,5 +145,17 @@
           d3.select("#popup").classed("hidden", true);
         }
       });
+
+    // Drawing the graticule
+    svg.append("path")
+      .datum(graticule)
+      .attr("class", "graticule")
+      .attr("d", path);
+
+    svg.append("path")
+      .datum(graticule.outline())
+      .attr("class", "graticuleOutline")
+      // .attr("id", "sphere")
+      .attr("d", path);
   }
 })();

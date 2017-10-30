@@ -6,7 +6,18 @@ svg {
   background: #ffffff;
   /*border: 0.5px dashed gray;*/
 }
-
+.graticule {
+  fill: none;
+  stroke: #777;
+  stroke-width: .5px;
+  stroke-opacity: .2;
+}
+.graticuleOutline {
+  fill: none;
+  stroke: #777;
+  stroke-width: 1px;
+  stroke-opacity: 0.2;
+}
 .country {
   fill: #E5E5E5;
   stroke: #B2B2B2;
