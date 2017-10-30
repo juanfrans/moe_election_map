@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Dosis:300,400,600&amp;subset=latin-ext" rel="stylesheet">
+  <link rel="stylesheet" href="css/mapStyle.css">
+  <title>Document</title>
+</head>
+<body>
+
+  <!-- Create the map div -->
+  <div id="map"></div>
+  <div id="popup" class="hidden">
+    <h1 id="name">Name of country</h1>
+    <!-- <p>Upcoming elections:</p> -->
+    <p id="description" class="descriptionText">Description of elections</p>
+    <p id="notes" class="notesText"></p>
+    <p id="description2" class="descriptionText">Description of elections</p>
+    <p id="notes2" class="notesText"></p>
+    <p id="description3" class="descriptionText">Description of elections</p>
+    <p id="notes3" class="notesText"></p>
+    <p id="description4" class="descriptionText">Description of elections</p>
+    <p id="notes4" class="notesText"></p>
+  </div>
+
+  <!-- Load the d3 and topojson libraries -->
+  <script src="https://d3js.org/d3.v4.0.0-alpha.50.min.js"></script>
+  <script src="https://d3js.org/topojson.v1.min.js"></script>
+  <script src="https://d3js.org/d3-array.v1.min.js"></script>
+  <script src="https://d3js.org/d3-geo.v1.min.js"></script>
+  <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
+
+  <!-- Load the javascript file to create the map -->
+  <script src="map.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+/* SCSS file for styles
+*/
+
+#justiceMap {
+    margin: auto;
+}
+
+#notes {
+    position: fixed;
+    background: blue;
+    color: white;
+    top: 10px;
+    right: 10px;
+    text-align: right;
+    z-index: 999;
+    a {
+        color: white;
+    }
+}
