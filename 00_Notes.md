@@ -13,6 +13,7 @@ Need to download the base data first and convert it to topojson format.
 
 #### To do
 * Simplify the data (get rid of a lot of columns in QGIS)
+* Change to hover instead of .on("click")
 
 #### References:
 * https://medium.com/@mbostock/command-line-cartography-part-1-897aa8f8ca2c
@@ -44,6 +45,14 @@ Need to download the base data first and convert it to topojson format.
 * Disenar el armazon tambien con titulo / texto / etc.
 * Arriba, boton espano e ingles
 * Colores: amarillo, azul y rojo
-* tipo de letra
+* **tipo de letra**:
+  * Titulo: Oswald, normal, 400 weight, 30px, letter spacing 2px, text-transform: uppercase
+  * Text: 'Merriweather', sans-serif; 13px, line-height: 1.7em;
 * Titulo
 * Description
+* Go full screen:
+  * https://stackoverflow.com/questions/11942500/how-to-make-force-layout-graph-in-d3-js-responsive-to-screen-browser-size
+  * http://bl.ocks.org/harlantwood/6900108
+* Scale for mobile
+* Select menu:
+  * http://bl.ocks.org/jhubley/17aa30fd98eb0cc7072f

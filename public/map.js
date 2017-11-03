@@ -2,22 +2,32 @@
   console.log("Start...");
 
   // Setting up the margins for the SVG
-  var margin = {top: 50, left: 50, right: 50, bottom: 50},
-    height = 720 - margin.top - margin.bottom,
+  var margin = {top: 0, left: 0, right: 0, bottom: 0},
+    height = 650 - margin.top - margin.bottom,
     width = 1280 - margin.left - margin.right;
+
+  // var year = "allYears",
+  //   electionType = "allTypes";
 
   // Creating the main SVG and positioning it
   var svg = d3.select("#map")
     .append("svg")
-    .attr("height", height + margin.top + margin.bottom)
-    .attr("width", width + margin.right + margin.left)
+    // .attr("height", height + margin.top + margin.bottom)
+    // .attr("width", width + margin.right + margin.left)
+    .attr("viewBox", "0 0 " + width + " " + height)
+    .attr("preserveAspectRatio", "xMidYMid meet")
     .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
   // Creating the projection
   var projection = d3.geoMollweide()
     .translate([width / 2, height / 2])
-    .scale(225)
+    .scale(220)
+
+  // Creating the projection
+  // var projection = d3.geoRobinson()
+  //   .translate([width / 2, height / 2])
+  //   .scale(225)
 
   // Creating the graticule
   var graticule = d3.geoGraticule();
@@ -50,32 +60,33 @@
           return "country";
         }
       })
+      // .on("mouseover", function(d) {
+      //   if(d.properties.EleElection) {
+      //     d3.select(this).style("cursor", "pointer");
+      //   } else {
+      //     d3.select(this).style("cursor", "default");
+      //   }
+      // })
       .on("mouseover", function(d) {
-        if(d.properties.EleElection) {
-          d3.select(this).style("cursor", "pointer");
-        } else {
-          d3.select(this).style("cursor", "default");
-        }
-      })
-      .on("click", function(d) {
-        console.log(d.properties.ABBREV);
+        // console.log(d.properties.ABBREV);
         d3.selectAll(".selected").classed("selected", false);
-        if(d.properties.EleElection == "Yes"){
+        // if(d.properties.EleElection == "Yes"){
+        if(d3.select(this).attr("class") == "elections"){
           d3.select(this).classed("selected", true);
-          console.log(d.properties.EleNationalElection1);
+          // console.log(d.properties.EleNationalElection1);
           // Get the coordinates for the popup
           var posX = event.clientX;
-          if(posX > (width * 0.75)){
-            posX = posX - 290
-          }
+          // if(posX > (width * 0.75)){
+          //   posX = posX - 290
+          // }
           var posY = event.clientY;
-          if(posY > (height - 120)){
-            posY = posY - 100
-          }
+          // if(posY > (height - 120)){
+          //   posY = posY - 100
+          // }
           // Add position and title to popup
           d3.select("#popup")
-            .style("left", posX + 10 + "px")
-            .style("top", posY + 10 + "px")
+            .style("left", posX -80 + "px")
+            .style("top", posY + "px")
             .select("#name")
             .text(d.properties.SOVEREIGNT);
           // Add description to popup
@@ -155,7 +166,43 @@
     svg.append("path")
       .datum(graticule.outline())
       .attr("class", "graticuleOutline")
-      // .attr("id", "sphere")
       .attr("d", path);
+
+    // Getting data from the select menus
+    d3.select("#year").on('change', function(d){
+      var year = d3.select(this).property('value');
+      d3.selectAll(".elections").classed("elections", false).classed("country", true);
+      d3.selectAll(".country").classed("elections", false).attr("class", function(d){
+        if(year == "2017"){
+          if(d.properties.EleNationalElection2){
+            return "elections";
+          }
+          else {
+            return "country";
+            }
+          }
+          else if(year == "allYears"){
+            if(d.properties.EleNationalElection1){
+              return "elections";
+            }
+            else {
+              return "country";
+            }
+          }
+        else {
+          if(d.properties.EleNationalElection3){
+            return "elections";
+          }
+          else {
+            return "country";
+          }
+        }
+      });
+      console.log(year);
+    });
+    d3.select("#electionType").on('change', function(){
+      var electionType = d3.select(this).property('value');
+      console.log(electionType);
+    });
   }
 })();
