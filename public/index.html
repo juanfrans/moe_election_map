@@ -16,42 +16,48 @@
 
   <!-- Create the map div -->
   <div class="container">
-    <div class="row">
-      <div class="col-md-9">
-        <h1 class="mapTitle">// Elecciones en el Mundo //</h1>
-        <p class="mapDescription">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis ligula vel augue porttitor malesuada nec in tellus. Donec eget dictum lectus. Donec a urna at risus gravida imperdiet vel ac neque. Donec pretium leo eget ante rutrum suscipit. Suspendisse arcu justo, pretium vitae volutpat eu, molestie vel nisi. Pellentesque tempor ut felis in eleifend. Etiam luctus dolor nec ultricies suscipit. Nunc mattis a enim non venenatis. Nullam cursus, nisi lobortis ornare ultricies, nisl augue tempus magna, ut pellentesque nisl mauris sed lacus. Donec ut consectetur leo. Vivamus iaculis sem quis tincidunt tempor. Phasellus vitae egestas orci. Praesent a magna efficitur, tempor lacus quis, scelerisque lorem. Praesent ac mi quis elit euismod luctus.</p>
-        <select class="custom-select" id="year">
-          <option selected value="allYears">Todos los Años</option>
-          <option value="2017">2017</option>
-          <option value="2018">2018</option>
-          <option value="2019">2019</option>
-          <option value="2020">2020</option>
-        </select>
-        <select class="custom-select" id="electionType">
-          <option selected value="allTypes">Todas las elecciones</option>
-          <option value="nacional">Nacionales</option>
-          <option value="local">Locales</option>
-        </select>
-        <div id="map"></div>
-        <div id="popup" class="hidden">
-          <h1 id="name">Name of country</h1>
-          <!-- <p>Upcoming elections:</p> -->
-          <p id="description" class="descriptionText">Description of elections</p>
-          <p id="notes" class="notesText"></p>
-          <p id="description2" class="descriptionText">Description of elections</p>
-          <p id="notes2" class="notesText"></p>
-          <p id="description3" class="descriptionText">Description of elections</p>
-          <p id="notes3" class="notesText"></p>
-          <p id="description4" class="descriptionText">Description of elections</p>
-          <p id="notes4" class="notesText"></p>
-        </div>
-        <p class="mapDescription">Fusce quis dui a lectus porta aliquet. Phasellus feugiat convallis massa eu elementum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean elementum accumsan est, sit amet vehicula est ultrices sit amet. Sed fringilla elit id enim volutpat, sed dignissim augue interdum. Ut porttitor bibendum hendrerit. Morbi et commodo tellus. Vivamus viverra, ante eu sollicitudin bibendum, tellus lectus semper erat, vitae laoreet risus sem sit amet neque. Suspendisse leo diam, sollicitudin eu mi eget, feugiat accumsan magna. Nam auctor pulvinar elementum. Vestibulum vitae turpis eget nisi faucibus pharetra sit amet ut metus. Nulla posuere, ante et tristique maximus, magna enim condimentum libero, vel fermentum purus urna eget ipsum. Phasellus pulvinar diam a eleifend gravida. Proin et ligula a ligula porta dignissim. Duis quis turpis sollicitudin, rhoncus magna tincidunt, imperdiet arcu. Fusce augue urna, pharetra et consequat nec, sagittis in mi.</p>
-      </div>
-      <div class="col-md-3">
-        <h2 class="sideTitle">// Acerca de Nosotros //</h2>
-        <p class="mapDescription">Duis ut interdum ipsum. Etiam ullamcorper nunc ut pharetra pellentesque. Mauris commodo tellus neque, sit amet mattis leo eleifend quis. Vivamus eu purus a neque efficitur faucibus id id magna. Nulla malesuada non justo ut eleifend. Donec vitae ligula lorem. Etiam suscipit iaculis nisi, sed pellentesque risus suscipit quis. Vivamus nec vehicula velit. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean porttitor dui enim, a convallis nisi dapibus nec. In vel augue ullamcorper erat malesuada pulvinar lacinia sed turpis. Praesent non ullamcorper tortor, nec dapibus lectus. Vestibulum faucibus massa aliquet pretium luctus. Donec vestibulum tempor odio quis gravida. Mauris sed interdum nulla.</p>
-      </div>
+    <h1 class="mapTitle">// Elecciones en el Mundo //</h1>
+    <p class="mapDescription">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis ligula vel augue porttitor malesuada nec in tellus. Donec eget dictum lectus. Donec a urna at risus gravida imperdiet vel ac neque. Donec pretium leo eget ante rutrum suscipit. Suspendisse arcu justo, pretium vitae volutpat eu, molestie vel nisi. Pellentesque tempor ut felis in eleifend. Etiam luctus dolor nec ultricies suscipit. Nunc mattis a enim non venenatis. Nullam cursus, nisi lobortis ornare ultricies, nisl augue tempus magna, ut pellentesque nisl mauris sed lacus. Donec ut consectetur leo. Vivamus iaculis sem quis tincidunt tempor. Phasellus vitae egestas orci. Praesent a magna efficitur, tempor lacus quis, scelerisque lorem. Praesent ac mi quis elit euismod luctus.</p>
+    <select class="custom-select" id="year">
+      <option selected value="allYears">Todos los Años</option>
+      <option value="2017">2017</option>
+      <option value="2018">2018</option>
+      <option value="2019">2019</option>
+      <option value="2020">2020</option>
+    </select>
+    <select class="custom-select" id="electionType">
+      <option selected value="allTypes">Todas las elecciones</option>
+      <option value="nacional">Nacionales</option>
+      <option value="local">Locales</option>
+    </select>
+    <select class="custom-select" id="region">
+      <option selected value="allRegions">Todas las regiones</option>
+      <option value="africa">africa</option>
+      <option value="latinamerica">america Latina</option>
+      <option value="asia">Asia</option>
+      <option value="caribe">Caribe</option>
+      <option value="europa">Europa</option>
+      <option value="norteamerica">Norte America</option>
+      <option value="oceania">Oceania</option>
+    </select>
+  </div>
+  <div class="container mapcontainer">
+    <div id="map"></div>
+    <div id="popup" class="hidden">
+      <h1 id="name">Name of country</h1>
+      <!-- <p>Upcoming elections:</p> -->
+      <p id="description" class="descriptionText">Description of elections</p>
+      <p id="notes" class="notesText"></p>
+      <p id="description2" class="descriptionText">Description of elections</p>
+      <p id="notes2" class="notesText"></p>
+      <p id="description3" class="descriptionText">Description of elections</p>
+      <p id="notes3" class="notesText"></p>
+      <p id="description4" class="descriptionText">Description of elections</p>
+      <p id="notes4" class="notesText"></p>
     </div>
+  </div>
+  <div class="container">
+    <p class="mapDescription">Fusce quis dui a lectus porta aliquet. Phasellus feugiat convallis massa eu elementum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean elementum accumsan est, sit amet vehicula est ultrices sit amet. Sed fringilla elit id enim volutpat, sed dignissim augue interdum. Ut porttitor bibendum hendrerit. Morbi et commodo tellus. Vivamus viverra, ante eu sollicitudin bibendum, tellus lectus semper erat, vitae laoreet risus sem sit amet neque. Suspendisse leo diam, sollicitudin eu mi eget, feugiat accumsan magna. Nam auctor pulvinar elementum. Vestibulum vitae turpis eget nisi faucibus pharetra sit amet ut metus. Nulla posuere, ante et tristique maximus, magna enim condimentum libero, vel fermentum purus urna eget ipsum. Phasellus pulvinar diam a eleifend gravida. Proin et ligula a ligula porta dignissim. Duis quis turpis sollicitudin, rhoncus magna tincidunt, imperdiet arcu. Fusce augue urna, pharetra et consequat nec, sagittis in mi.</p>
   </div>
 
   <!-- Load the d3 and topojson libraries -->

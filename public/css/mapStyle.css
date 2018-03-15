@@ -5,6 +5,39 @@ svg {
   background: #ffffff;
   /*border: 0.5px dashed gray;*/
 }
+
+@media (min-width: 576px) {
+  div.container.mapcontainer {
+    max-width: 760px;
+  }
+}
+@media (min-width: 768px) {
+  div.container.mapcontainer {
+    max-width: 990px;
+  }
+}
+@media (min-width: 992px) {
+  div.container.mapcontainer {
+    max-width: 1200px;
+  }
+}
+@media (min-width: 1200px) {
+  div.container.mapcontainer {
+    max-width: 1500px;
+  }
+}
+
+@media (min-width: 992px) {
+  div.container {
+    max-width: 800px;
+  }
+}
+@media (min-width: 1200px) {
+  div.container {
+    max-width: 800px;
+  }
+}
+
 h1.mapTitle {
   color: black;
   text-align: center;
@@ -112,4 +145,5 @@ p.notesText {
   font-weight: 400;
   font-size: 13px;
   text-transform: uppercase;
+  margin-top: 20px;
 }

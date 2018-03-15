@@ -26,6 +26,7 @@ Need to download the base data first and convert it to topojson format.
 * http://duspviz.mit.edu/d3-workshop/mapping-data-with-d3/
 * http://alignedleft.com/tutorials/d3
 * http://chimera.labs.oreilly.com/books/1230000000345/ch10.html#_html_div_tooltips
+* http://www.cartographicperspectives.org/index.php/journal/article/view/cp78-sack-et-al/1359
 
 #### Data Problems
 * All regions? Or just latin America?
@@ -56,3 +57,40 @@ Need to download the base data first and convert it to topojson format.
 * Scale for mobile
 * Select menu:
   * http://bl.ocks.org/jhubley/17aa30fd98eb0cc7072f
+
+#### Llamada Feb 12, 2018
+* Polity: Elementos de la democracia: (Polity IV v2016 (POLITY))
+  * 0 - 10: democracia
+  * -1 - -10: autocracia
+  * -66: Transicion politica
+  * -88 & -77
+* Voto obligatorio:
+  * Por terminar
+* Participacion %
+* GimDem (?)
+* Negro (que se ilumine)
+* Filtro por region **
+* Obligatorio vs. Voto Libre con % de participacion
+* Dejar la descripcion por fuera
+* Mapa mas grande
+* Una sola columna
+* Parrafo arriba y abajo
+* Version fondo claro y fondo oscuro
+* Lo mas grande possible (quitar mar?)
+
+#### Recomendaciones para actualizar la base de datos:
+* Usar los nombres de los paises en la hoja XXXX
+* Usar los codigos ISO_A2 en la hoja XXXX
+
+#### Process
+* Prepare base shapefile:
+  * Get base shapefile from Natural Earth (50m)
+  * Add the right iso codes and the names in Spanish
+  * Export as GeoJSON
+  * *Convert geojson to topojson*: `geo2topo input.geojson > output.topojson`
+    * **do i need to simplify the geometry???**
+* Prepare the base dataset:
+  * Add the right names and the right iso codes (A2)
+  * Export as .csv
+* Join GeoJSON and csv
+* Display in the map

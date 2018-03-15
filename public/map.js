@@ -6,14 +6,9 @@
     height = 650 - margin.top - margin.bottom,
     width = 1280 - margin.left - margin.right;
 
-  // var year = "allYears",
-  //   electionType = "allTypes";
-
   // Creating the main SVG and positioning it
   var svg = d3.select("#map")
     .append("svg")
-    // .attr("height", height + margin.top + margin.bottom)
-    // .attr("width", width + margin.right + margin.left)
     .attr("viewBox", "0 0 " + width + " " + height)
     .attr("preserveAspectRatio", "xMidYMid meet")
     .append("g")
@@ -24,11 +19,6 @@
     .translate([width / 2, height / 2])
     .scale(220)
 
-  // Creating the projection
-  // var projection = d3.geoRobinson()
-  //   .translate([width / 2, height / 2])
-  //   .scale(225)
-
   // Creating the graticule
   var graticule = d3.geoGraticule();
 
@@ -36,17 +26,56 @@
   var path = d3.geoPath()
     .projection(projection);
 
-  // Loading the data with d3
+  // // Loading the data with d3
+  // d3.queue()
+  //   .defer(d3.json, "data/world_50m_topo_data.topojson")
+  //   .await(ready)
+
+  var electionData = d3.map();
+
   d3.queue()
-    .defer(d3.json, "data/world_50m_topo_data.topojson")
+    .defer(d3.json, "data/World_50m_Updated.topojson")
+    .defer(d3.csv, "data/ElectionData.csv")
     .await(ready)
 
-  function ready(error, data) {
-    console.log(data);
+  function ready(error, geoData, electionData) {
+    if(error) throw error;
 
     // Extracting countries and converting them into something we can use
-    var countries = topojson.feature(data, data.objects.World50_Simplified_Data).features // This is crucial, make sure you are pointing to the right place in the file
-    console.log(countries);
+    var countries = topojson.feature(geoData, geoData.objects.World_50m_Updated).features // This is crucial, make sure you are pointing to the right place in the file
+    // console.log(countries);
+
+    // Joining the two files
+    for (var i = 0; i < electionData.length; i++) {
+      for (var j = 0; j < countries.length; j++) {
+        if (countries[j].properties.ISO_A2 == electionData[i].IsoCode) {
+          countries[j].properties.EleElection = "Yes";
+          countries[j].properties.Region = electionData[i].Region;
+          countries[j].properties.Participacion = electionData[i].Participacion;
+          countries[j].properties.Obligatorio = electionData[i].Obligatorio;
+          countries[j].properties.Polity = electionData[i].Polity;
+          countries[j].properties.Tipo1 = electionData[i].Tipo1;
+          countries[j].properties.Ano1 = electionData[i].Ano1;
+          countries[j].properties.Fecha1_1 = electionData[i].Fecha1_1;
+          countries[j].properties.Fecha1_2 = electionData[i].Fecha1_2;
+          countries[j].properties.Descripcion1 = electionData[i].Descripcion1;
+          countries[j].properties.Fuente1 = electionData[i].Fuente1;
+          countries[j].properties.Tipo2 = electionData[i].Tipo2;
+          countries[j].properties.Ano2 = electionData[i].Ano2;
+          countries[j].properties.Fecha2_1 = electionData[i].Fecha2_1;
+          countries[j].properties.Fecha2_2 = electionData[i].Fecha2_2;
+          countries[j].properties.Descripcion2 = electionData[i].Descripcion2;
+          countries[j].properties.Fuente2 = electionData[i].Fuente2;
+          countries[j].properties.Tipo3 = electionData[i].Tipo3;
+          countries[j].properties.Ano3 = electionData[i].Ano3;
+          countries[j].properties.Fecha3_1 = electionData[i].Fecha3_1;
+          countries[j].properties.Fecha3_2 = electionData[i].Fecha3_2;
+          countries[j].properties.Descripcion3 = electionData[i].Descripcion3;
+          countries[j].properties.Fuente3 = electionData[i].Fuente3;
+          break;
+        }
+      }
+    }
 
     svg.selectAll(".country")
       .data(countries)
@@ -173,32 +202,21 @@
       var year = d3.select(this).property('value');
       d3.selectAll(".elections").classed("elections", false).classed("country", true);
       d3.selectAll(".country").classed("elections", false).attr("class", function(d){
-        if(year == "2017"){
-          if(d.properties.EleNationalElection2){
-            return "elections";
-          }
-          else {
-            return "country";
-            }
-          }
-          else if(year == "allYears"){
-            if(d.properties.EleNationalElection1){
-              return "elections";
-            }
-            else {
-              return "country";
-            }
-          }
-        else {
-          if(d.properties.EleNationalElection3){
+        if (year == "allYears"){
+          if (d.properties.EleElection){
             return "elections";
           }
           else {
             return "country";
           }
         }
+        else if(d.properties.Ano1 == year){
+          return "elections";
+        }
+        else {
+          return "country";
+        }
       });
-      console.log(year);
     });
     d3.select("#electionType").on('change', function(){
       var electionType = d3.select(this).property('value');
