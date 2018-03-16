@@ -1,17 +1,19 @@
 :root {
-  --backgroundColor: #ffffff;
-  --textColor: #000000;
-  --graticuleStroke: #777;
-  --countryFill: #E5E5E5;
-  --countryStroke: #B2B2B2;
-  --electionsFill: #5c9cb8;
+  --backgroundColor: #262626;
+  --textColor: #F2F2F2;
+  --graticuleStroke: #E5E5E5;
+  --countryFill: #404040;
+  --countryStroke: #737373;
+  --electionsFill: #FFA319;
   --electionsStroke: #CCCCCC;
-  --selectedFill: #166079;
-  --customSelectColor: #585858;
-  --popupBackgroundColor: rgba(255, 255, 255, 0.9);
+  --selectedFill: #FF590C;
+  --customSelectColor: #F2F2F2;
+  --customSelectBackground: #262626;
+  --popupBackgroundColor: rgba(38, 38, 38, 0.9);
 }
 
 body {
+  background: var(--backgroundColor);
 }
 
 svg {
@@ -152,6 +154,7 @@ p.notesText {
   font-family: 'Merriweather', serif;
 }
 .custom-select {
+  background: var(--customSelectBackground);
   color: var(--customSelectColor);
   font-family: 'Oswald', sans-serif;
   font-weight: 400;

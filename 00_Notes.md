@@ -81,6 +81,8 @@ Need to download the base data first and convert it to topojson format.
 #### Recomendaciones para actualizar la base de datos:
 * Usar los nombres de los paises en la hoja XXXX
 * Usar los codigos ISO_A2 en la hoja XXXX
+* Falta fecha elecciones en etiopia
+* Que es voto obligatorio 0, 1, 2?
 
 #### Process
 * Prepare base shapefile:
