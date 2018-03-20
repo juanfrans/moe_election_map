@@ -125,8 +125,10 @@ function drawMap(googleData) {
           //   .select("#name")
           //   .text(d.properties.NombreEsp);
             d3.select("#popup")
-              .style("left", posX -80 + "px")
-              .style("top", posY + "px")
+              // .style("position", "absolute")
+              // .style("top", "50px")
+              // .style("left", posX -80 + "px")
+              // .style("top", posY + "px")
               .select("#name")
               .text(d.properties.NombreEsp);
 
@@ -210,7 +212,20 @@ function drawMap(googleData) {
         else {
           d3.select("#popup").classed("hidden", true);
         }
+
+
+
       });
+
+      // // Close popup function
+      // if (d3.select("#popup").classed("hidden" == false)){
+      //   console.log("hello");
+      // }
+      // d3.select("#popup");
+      // d3.select("a").on("click", function(d){
+      //   console.log("popupclose!");
+      //   d3.select("#popup").classed("hidden", true);
+      // });
 
     // Drawing the graticule
     svg.append("path")
@@ -338,5 +353,8 @@ function drawMap(googleData) {
         }
       });
     });
+
+
+
   }
 };
