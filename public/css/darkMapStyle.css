@@ -9,7 +9,8 @@
   --selectedFill: #FF590C;
   --customSelectColor: #F2F2F2;
   --customSelectBackground: #262626;
-  --popupBackgroundColor: rgba(41, 41, 41, 0.9);
+  --popupBackgroundColor: rgba(38, 38, 38, 0.9);
+  --popupBorderColor: #737373;
 }
 
 body {
@@ -167,6 +168,9 @@ p.mapDescription {
   -moz-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
   pointer-events: none;
+  border-style: solid;
+  border-width: 0.5px;
+  border-color: var(--popupBorderColor);
 }
 #popup.hidden {
   display: none;

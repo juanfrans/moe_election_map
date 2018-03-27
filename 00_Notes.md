@@ -100,5 +100,4 @@ Need to download the base data first and convert it to topojson format.
 #### To do
 * Align menu and popup to edge of map
 * Filter popup items by year selected and type of election
-* Change background color of popup
 * Clean up google document

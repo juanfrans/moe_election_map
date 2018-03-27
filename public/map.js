@@ -165,12 +165,37 @@ function getData() {
           else {
             d3.select("#popObligatory").text("");
           }
-          if (d.properties.Participacion) {
+          if (d.properties.Polity) {
             d3.select("#popScore").text("Puntaje Polity: " + d.properties.Polity);
           }
           else {
             d3.select("#popScore").text("");
           }
+
+
+          if (d.properties.Fuente1) {
+            d3.select("#fuente1")
+            .attr("href", d.properties.Fuente1)
+            // .html("some text");
+            .text(d.properties.Fuente1);
+          }
+          else {
+            d3.select("#fuente1").text("");
+          }
+          // if (d.properties.Fuente2) {
+          //   d3.select("#popScore").text("Puntaje Polity: " + d.properties.Fuente2);
+          // }
+          // else {
+          //   d3.select("#popScore").text("");
+          // }
+          // if (d.properties.Fuente3) {
+          //   d3.select("#popScore").text("Puntaje Polity: " + d.properties.Fuente3);
+          // }
+          // else {
+          //   d3.select("#popScore").text("");
+          // }
+
+
           d3.select("#popup")
           .classed("hidden", false);
         }
