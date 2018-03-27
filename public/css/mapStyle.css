@@ -1,17 +1,20 @@
 :root {
-  --backgroundColor: #ffffff;
-  --textColor: #000000;
-  --graticuleStroke: #777;
-  --countryFill: #E5E5E5;
-  --countryStroke: #B2B2B2;
-  --electionsFill: #5c9cb8;
+  --backgroundColor: #262626;
+  --textColor: #F2F2F2;
+  --graticuleStroke: #E5E5E5;
+  --countryFill: #404040;
+  --countryStroke: #737373;
+  --electionsFill: #FFA319;
   --electionsStroke: #CCCCCC;
-  --selectedFill: #166079;
-  --customSelectColor: #585858;
-  --popupBackgroundColor: rgba(255, 255, 255, 0.9);
+  --selectedFill: #FF590C;
+  --customSelectColor: #F2F2F2;
+  --customSelectBackground: #262626;
+  --popupBackgroundColor: rgba(38, 38, 38, 0.9);
+  --popupBorderColor: #737373;
 }
 
 body {
+  background: var(--backgroundColor);
 }
 
 svg {
@@ -80,6 +83,18 @@ p.mapDescription {
   margin-top: 5px;
   margin-bottom: 5px;
   line-height: 24px;
+}
+p.caption {
+  font-family: 'Oswald', sans-serif;
+  color: var(--textColor);
+  font-weight: 200;
+  font-size: 0.85em;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+.caption a{
+  text-decoration: underline;
+  color: var(--textColor);
 }
 .graticule {
   fill: none;
@@ -158,15 +173,16 @@ p.mapDescription {
 #popup {
   background-color: var(--popupBackgroundColor);
   position: absolute;
-  /* top: 1em;
-  left: 1em; */
-  /* max-width: 200px; */
+  /* width: 250px; */
   height: auto;
   /* padding: 10px; */
   -webkit-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-  pointer-events: none;
+  /* pointer-events: none; */
+  border-style: solid;
+  border-width: 0.5px;
+  border-color: var(--popupBorderColor);
 }
 #popup.hidden {
   display: none;
@@ -179,6 +195,10 @@ p.descriptionText {
   margin-top: 5px;
   margin-bottom: 5px;
   line-height: 1.25em;
+}
+p.descriptionText a {
+  text-decoration: underline;
+  color: var(--textColor);
 }
 #popup h1 {
   color: var(--textColor);
@@ -198,13 +218,8 @@ p.notesText {
   line-height: 1.25em;
   font-family: 'Merriweather', serif;
 }
-/* a.popup-close-button {
-  position: absolute;
-  top: 0.01em;
-  right: 0.4em;
-  color: var(--graticuleStroke);
-} */
 .custom-select {
+  background: var(--customSelectBackground);
   color: var(--customSelectColor);
   font-family: 'Oswald', sans-serif;
   font-weight: 400;

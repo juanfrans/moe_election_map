@@ -83,6 +83,7 @@ Need to download the base data first and convert it to topojson format.
 * Usar los codigos ISO_A2 en la hoja XXXX
 * Falta fecha elecciones en etiopia
 * Que es voto obligatorio 0, 1, 2?
+* Si es la misma fuente, solo debe aparecer una vez
 
 #### Process
 * Prepare base shapefile:
