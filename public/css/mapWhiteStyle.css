@@ -1,16 +1,15 @@
 :root {
-  --backgroundColor: #262626;
-  --textColor: #F2F2F2;
-  --graticuleStroke: #E5E5E5;
-  --countryFill: #404040;
-  --countryStroke: #737373;
-  --electionsFill: #FFA319;
+  --backgroundColor: #ffffff;
+  --textColor: #000000;
+  --graticuleStroke: #777;
+  --countryFill: #E5E5E5;
+  --countryStroke: #B2B2B2;
+  --electionsFill: #5c9cb8;
   --electionsStroke: #CCCCCC;
-  --selectedFill: #FF590C;
-  --customSelectColor: #F2F2F2;
-  --customSelectBackground: #262626;
-  --popupBackgroundColor: rgba(38, 38, 38, 0.9);
-  --popupBorderColor: #737373;
+  --selectedFill: #166079;
+  --customSelectColor: #585858;
+  --popupBackgroundColor: rgba(255, 255, 255, 0.9);
+  --popupBorderColor: #CCCCCC;
 }
 
 body {
@@ -180,9 +179,9 @@ p.caption {
   -moz-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
   /* pointer-events: none; */
-  border-style: solid;
+  /* border-style: solid;
   border-width: 0.5px;
-  border-color: var(--popupBorderColor);
+  border-color: var(--popupBorderColor); */
 }
 #popup.hidden {
   display: none;
@@ -254,8 +253,4 @@ p.article-author {
 p.article-abstract {
   font-size: 13px;
   line-height: 24px;
-}
-p.article-abstract a {
-  text-decoration: underline;
-  color: var(--textColor);
 }
