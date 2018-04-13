@@ -271,9 +271,22 @@ function getData() {
         }
         else {}
         // Applying the new selection
-        var electionType = d3.select(this).property('value');
+        var electionType = d3.select(this).property('value').toUpperCase();
         d3.selectAll(".elections").classed("elections", false).classed("country", true);
         d3.selectAll(".country").classed("elections", false).attr("class", function(d){
+          var Tipo1, Tipo2, Tipo3;
+          if (d.properties.Tipo1){
+            Tipo1 = d.properties.Tipo1.toUpperCase();
+          }
+          else{}
+          if (d.properties.Tipo2){
+            Tipo2 = d.properties.Tipo2.toUpperCase();
+          }
+          else{}
+          if (d.properties.Tipo3){
+            Tipo3 = d.properties.Tipo3.toUpperCase();
+          }
+          else{}
           if (electionType == "allTypes"){
             if (d.properties.EleElection){
               return "elections";
@@ -282,7 +295,7 @@ function getData() {
               return "country";
             }
           }
-          else if(d.properties.Tipo1 == electionType || d.properties.Tipo2 == electionType || d.properties.Tipo3 == electionType) {
+          else if(Tipo1 == electionType || Tipo2 == electionType || Tipo3 == electionType) {
             return "elections";
           }
           else {
@@ -309,9 +322,14 @@ function getData() {
         }
         else {}
         // Applying the new selection
-        var selectedRegion = d3.select(this).property('value');
+        var selectedRegion = d3.select(this).property('value').toUpperCase();
         d3.selectAll(".elections").classed("elections", false).classed("country", true);
         d3.selectAll(".country").classed("elections", false).attr("class", function(d){
+          var thisRegion;
+          if (d.properties.Region){
+            thisRegion = d.properties.Region.toUpperCase();
+          }
+          else{}
           if (selectedRegion == "allRegions"){
             if (d.properties.EleElection){
               return "elections";
@@ -320,7 +338,7 @@ function getData() {
               return "country";
             }
           }
-          else if(d.properties.Region == selectedRegion) {
+          else if(thisRegion == selectedRegion) {
             return "elections";
           }
           else {
