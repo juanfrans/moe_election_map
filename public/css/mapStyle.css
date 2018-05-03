@@ -76,13 +76,10 @@ h2.sideTitle {
   margin-bottom: 30px;
 }
 p.mapDescription {
-  font-family: 'Merriweather', serif;
+  font-family: 'Oswald', sans-serif;
   color: var(--textColor);
-  font-weight: 400;
-  font-size: 13px;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  line-height: 24px;
+  font-weight: 300;
+  font-size: 1em;
 }
 p.caption {
   font-family: 'Oswald', sans-serif;
@@ -191,7 +188,6 @@ p.descriptionText {
   font-family: 'Oswald', sans-serif;
   color: var(--textColor);
   font-weight: 300;
-  /* font-size: 0.9em; */
   margin-top: 5px;
   margin-bottom: 5px;
   line-height: 1.25em;
@@ -235,8 +231,9 @@ hr.hidden {
   display:none;
 }
 .article {
-  margin-top: 10px;
-  font-family: 'Merriweather', serif;
+  margin-top: 40px;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
   color: var(--textColor);
   margin-bottom: 30px;
 }
@@ -248,14 +245,6 @@ h4.article-title {
   color: var(--textColor);
 }
 p.article-author {
-  font-size: 13px;
+  font-size: 1em;
   margin-bottom: 0.5em;
-}
-p.article-abstract {
-  font-size: 13px;
-  line-height: 24px;
-}
-p.article-abstract a {
-  text-decoration: underline;
-  color: var(--textColor);
 }

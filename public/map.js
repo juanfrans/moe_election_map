@@ -287,7 +287,7 @@ function getData() {
             Tipo3 = d.properties.Tipo3.toUpperCase();
           }
           else{}
-          if (electionType == "allTypes"){
+          if (electionType == "ALLTYPES"){
             if (d.properties.EleElection){
               return "elections";
             }
@@ -330,7 +330,7 @@ function getData() {
             thisRegion = d.properties.Region.toUpperCase();
           }
           else{}
-          if (selectedRegion == "allRegions"){
+          if (selectedRegion == "ALLREGIONS"){
             if (d.properties.EleElection){
               return "elections";
             }
