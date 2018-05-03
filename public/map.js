@@ -5,6 +5,7 @@ function getData() {
     simpleSheet: true } )
   }
   function draw(data, tabletop) {
+    console.log("first dialogue");
     console.log("Got data from GoogleSheets");
     drawMap(data);
   }
