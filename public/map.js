@@ -323,6 +323,7 @@ function getData() {
         else {}
         // Applying the new selection
         var selectedRegion = d3.select(this).property('value').toUpperCase();
+        console.log(selectedRegion);
         d3.selectAll(".elections").classed("elections", false).classed("country", true);
         d3.selectAll(".country").classed("elections", false).attr("class", function(d){
           var thisRegion;
