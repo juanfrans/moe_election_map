@@ -5,7 +5,6 @@ function getData() {
     simpleSheet: true } )
   }
   function draw(data, tabletop) {
-    console.log("first dialogue");
     console.log("Got data from GoogleSheets");
     drawMap(data);
   }
@@ -14,7 +13,6 @@ function getData() {
 
   function drawMap(googleData) {
     console.log("Drawing the map...");
-    console.log("has this updated?");
 
     // Setting up the margins for the SVG
     var margin = {top: 0, left: 0, right: 0, bottom: 0},
@@ -325,7 +323,6 @@ function getData() {
         else {}
         // Applying the new selection
         var selectedRegion = d3.select(this).property('value').toUpperCase();
-        console.log(selectedRegion);
         d3.selectAll(".elections").classed("elections", false).classed("country", true);
         d3.selectAll(".country").classed("elections", false).attr("class", function(d){
           var thisRegion;
