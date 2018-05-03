@@ -13,6 +13,7 @@ function getData() {
 
   function drawMap(googleData) {
     console.log("Drawing the map...");
+    console.log("has this updated?");
 
     // Setting up the margins for the SVG
     var margin = {top: 0, left: 0, right: 0, bottom: 0},
